@@ -1,34 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   map_name_checker.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jmeirele <jmeirele@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/17 10:34:23 by jmeirele          #+#    #+#             */
-/*   Updated: 2024/12/17 12:50:46 by jmeirele         ###   ########.fr       */
+/*   Created: 2024/12/17 11:11:17 by jmeirele          #+#    #+#             */
+/*   Updated: 2024/12/17 12:49:38 by jmeirele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/so_long.h"
+#include "../../inc/so_long.h"
 
-
-int main(int argc, char **argv)
+int	map_name_checker(t_map *map)
 {
-	t_game	*game;
-	t_map	*map;
-	t_pos	*pos;
+	char	*extension;
 
-	game = NULL;
-	map = NULL;
-	pos = NULL;
-	if (argc == 2)
-	{
-		game = init_game_struct();
-		game->map->map_name = argv[1];
-		map_name_checker(game->map);
-		// free_struct(game);
-	}
-	else
-		ft_print_error("Error\n");
+	extension = ft_strrchr(map->map_name, '.');
+	if (extension && ft_strcmp(extension, ".ber") == 0)
+		return (0);
+	return (1);
 }

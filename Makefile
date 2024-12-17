@@ -6,9 +6,15 @@ SRC_DIR = src
 INC_DIR = inc
 LIBFT_DIR = 42_Libft
 LIBFT = $(LIBFT_DIR)/libft.a
-# MOVES_DIR = $(SRC_DIR)/moves
+UTILS_DIR = $(SRC_DIR)/utils
+MAPS_DIR = $(SRC_DIR)/maps
+PARSING_DIR = $(SRC_DIR)/parsing
 
 SRC = $(SRC_DIR)/main.c \
+		$(PARSING_DIR)/map_name_checker.c \
+		$(UTILS_DIR)/error.c \
+		$(UTILS_DIR)/free.c \
+		$(UTILS_DIR)/init_structs.c \
 
 all: $(LIBFT) $(NAME)
 
