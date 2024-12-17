@@ -9,14 +9,17 @@ LIBFT = $(LIBFT_DIR)/libft.a
 UTILS_DIR = $(SRC_DIR)/utils
 MAPS_DIR = $(SRC_DIR)/maps
 PARSING_DIR = $(SRC_DIR)/parsing
+INITS_DIR = $(SRC_DIR)/inits
 
 SRC = $(SRC_DIR)/main.c \
+		$(INITS_DIR)/init_structs.c \
 		$(PARSING_DIR)/map_name_checker.c \
-		$(PARSING_DIR)/map_checker.c \
+		$(PARSING_DIR)/map_validation.c \
 		$(UTILS_DIR)/error.c \
 		$(UTILS_DIR)/free.c \
-		$(UTILS_DIR)/init_structs.c \
 		$(UTILS_DIR)/map_utils.c \
+
+VARGS = --leak-check=full --show-leak-kinds=all --track-fds=yes --track-origins=yes
 
 TEST_MAP_1 = ./src/maps/map.ber
 
@@ -49,8 +52,8 @@ get_log:
 		tail -f gdb.txt; \
 	fi
 
-valgrind: all $(NAME)
-	valgrind ./$(NAME) $(TEST_MAP_1)
+val: $(NAME) $(SRC)
+	valgrind $(VARGS) ./$(NAME) $(TEST_MAP_1)
 
 test_map_1: $(NAME) $(SRC)
 	./$(NAME) $(TEST_MAP_1)

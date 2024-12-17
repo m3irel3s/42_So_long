@@ -6,7 +6,7 @@
 /*   By: jmeirele <jmeirele@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/17 10:26:55 by jmeirele          #+#    #+#             */
-/*   Updated: 2024/12/17 15:39:15 by jmeirele         ###   ########.fr       */
+/*   Updated: 2024/12/17 17:27:22 by jmeirele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,9 +50,10 @@ typedef struct s_game
 //===============================================================//
 
 int		map_name_checker(t_map *map);
-int		map_checker(t_map *map);
+int		map_validation(t_map *map);
 void	populate_map_grid(t_map *map);
-
+void	check_width_and_set(t_map *map);
+int		count_occurs(t_map *map, char c);
 
 //===============================================================//
 //                        UTILS FUNCTIONS                        //
@@ -60,7 +61,6 @@ void	populate_map_grid(t_map *map);
 
 void	ft_print_error(char *str);
 void	set_map_height(t_map *map);
-
 
 //===============================================================//
 //                      INIT STRUCTS FUNCS                       //

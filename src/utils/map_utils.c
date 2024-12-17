@@ -6,7 +6,7 @@
 /*   By: jmeirele <jmeirele@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/17 14:48:02 by jmeirele          #+#    #+#             */
-/*   Updated: 2024/12/17 15:29:05 by jmeirele         ###   ########.fr       */
+/*   Updated: 2024/12/17 16:20:35 by jmeirele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	set_map_height(t_map *map)
 
 	rows = 0;
 	fd = open(map->map_name, O_RDONLY);
-	if (!fd)
+	if (fd == -1)
 		ft_print_error("Error opening the file descriptor\n");
 	line = get_next_line(fd);
 	while (line && *line)
