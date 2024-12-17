@@ -1,37 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   free.c                                             :+:      :+:    :+:   */
+/*   map_utils.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jmeirele <jmeirele@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/17 11:54:37 by jmeirele          #+#    #+#             */
-/*   Updated: 2024/12/17 15:37:04 by jmeirele         ###   ########.fr       */
+/*   Created: 2024/12/17 14:48:02 by jmeirele          #+#    #+#             */
+/*   Updated: 2024/12/17 15:29:05 by jmeirele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../inc/so_long.h"
 
-void	free_struct(t_game *game)
+void	set_map_height(t_map *map)
 {
-	if (game)
+	int		rows;
+	int		fd;
+	char	*line;
+
+	rows = 0;
+	fd = open(map->map_name, O_RDONLY);
+	if (!fd)
+		ft_print_error("Error opening the file descriptor\n");
+	line = get_next_line(fd);
+	while (line && *line)
 	{
-		if (game->map)
-		{
-			if(game->map->player_pos)
-				free(game->map->player_pos);
-			free(game->map);
-		}
-	free(game);
+		rows++;
+		free(line);
+		line = get_next_line(fd);
 	}
-}
-
-void	free_grid(t_map *map)
-{
-	int	i;
-
-	i = 0;
-	while (i < map->height)
-		free(map->grid[i++]);
-	free(map->grid);
+	free(line);
+	map->height = rows;
+	close(fd);
 }

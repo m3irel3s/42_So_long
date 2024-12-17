@@ -12,9 +12,13 @@ PARSING_DIR = $(SRC_DIR)/parsing
 
 SRC = $(SRC_DIR)/main.c \
 		$(PARSING_DIR)/map_name_checker.c \
+		$(PARSING_DIR)/map_checker.c \
 		$(UTILS_DIR)/error.c \
 		$(UTILS_DIR)/free.c \
 		$(UTILS_DIR)/init_structs.c \
+		$(UTILS_DIR)/map_utils.c \
+
+TEST_MAP_1 = ./src/maps/map.ber
 
 all: $(LIBFT) $(NAME)
 
@@ -44,6 +48,12 @@ get_log:
 	else \
 		tail -f gdb.txt; \
 	fi
+
+valgrind: all $(NAME)
+	valgrind ./$(NAME) $(TEST_MAP_1)
+
+test_map_1: $(NAME) $(SRC)
+	./$(NAME) $(TEST_MAP_1)
 
 fclean: clean
 	rm -f $(NAME)

@@ -6,7 +6,7 @@
 /*   By: jmeirele <jmeirele@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/17 10:26:55 by jmeirele          #+#    #+#             */
-/*   Updated: 2024/12/17 12:47:07 by jmeirele         ###   ########.fr       */
+/*   Updated: 2024/12/17 15:39:15 by jmeirele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,13 +29,13 @@ typedef struct s_pos
 
 typedef struct s_map
 {
-	char		**grid;
-	int			width;
-	int			height;
-	int			collects;
-	int			exits;
-	int			players;
-	char		*map_name;
+	char	**grid;
+	int		width;
+	int		height;
+	int		collects;
+	int		exits;
+	int		players;
+	char	*map_name;
 	t_pos	*player_pos;
 }	t_map;
 
@@ -50,12 +50,17 @@ typedef struct s_game
 //===============================================================//
 
 int		map_name_checker(t_map *map);
+int		map_checker(t_map *map);
+void	populate_map_grid(t_map *map);
+
 
 //===============================================================//
 //                        UTILS FUNCTIONS                        //
 //===============================================================//
 
 void	ft_print_error(char *str);
+void	set_map_height(t_map *map);
+
 
 //===============================================================//
 //                      INIT STRUCTS FUNCS                       //
@@ -66,6 +71,7 @@ t_map	*init_map_struct(t_game *game);
 t_pos	*init_pos_struct(t_game *game);
 
 void	free_struct(t_game *game);
+void	free_grid(t_map *map);
 
 
 

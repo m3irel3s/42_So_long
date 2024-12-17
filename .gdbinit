@@ -25,12 +25,22 @@ define init_pos_struct
 	disp *position
 end
 
+define map_checker
+
+end
+
+define read_map_lines
+	disp *map
+	disp map->grid[i]
+	disp map->grid
+	disp line
+	disp fd
+end
+
 fs cmd
 file so_long
-break init_game_struct
-break init_map_struct
-break init_pos_struct
-run ola.ber
+break read_map_lines
+run ./src/maps/map.ber
 
 info break
 info watch
