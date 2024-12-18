@@ -6,12 +6,11 @@
 /*   By: jmeirele <jmeirele@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/17 10:34:23 by jmeirele          #+#    #+#             */
-/*   Updated: 2024/12/17 15:54:56 by jmeirele         ###   ########.fr       */
+/*   Updated: 2024/12/18 16:44:53 by jmeirele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/so_long.h"
-
 
 int main(int argc, char **argv)
 {
@@ -26,12 +25,12 @@ int main(int argc, char **argv)
 	{
 		game = init_game_struct();
 		game->map->map_name = argv[1];
-		set_map_height(game->map);
-		map_name_checker(game->map);
-		map_validation(game->map);
+		set_map_height(game, game->map);
+		map_name_checker(game, game->map);
+		map_validation(game, game->map);
 		free_grid(game->map);
 		free_struct(game);
 	}
 	else
-		ft_print_error("Error\n");
+		ft_print_error(game, "Error getting arguments\n");
 }

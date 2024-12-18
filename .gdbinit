@@ -5,7 +5,7 @@ set print array on
 set style enabled on
 
 
-set logging on
+set logging enabled on
 
 define main
 	disp *argv@argc
@@ -25,8 +25,9 @@ define init_pos_struct
 	disp *position
 end
 
-define map_checker
-
+define map_name_checker
+	disp extension
+	disp map->map_name
 end
 
 define read_map_lines
@@ -39,8 +40,8 @@ end
 
 fs cmd
 file so_long
-break read_map_lines
-run ./src/maps/map.ber
+break main
+run ./src/maps/invalid_maps/empty.ber
 
 info break
 info watch
