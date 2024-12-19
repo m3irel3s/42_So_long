@@ -6,7 +6,7 @@
 /*   By: jmeirele <jmeirele@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/18 17:20:09 by jmeirele          #+#    #+#             */
-/*   Updated: 2024/12/19 15:16:29 by jmeirele         ###   ########.fr       */
+/*   Updated: 2024/12/19 17:32:01 by jmeirele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,11 @@ void	render_win(t_game *game, t_map *map)
 		}
 		i++;
 	}
+	set_player_position(map);
+	printf("pos x => %d\n", map->player_pos->x);
+	printf("pos y => %d\n", map->player_pos->y);
+	mlx_key_hook(game->win, )
 	mlx_loop(game->mlx);
-
 }
+
 

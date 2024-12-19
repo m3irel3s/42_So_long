@@ -6,7 +6,7 @@
 /*   By: jmeirele <jmeirele@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/18 10:30:15 by jmeirele          #+#    #+#             */
-/*   Updated: 2024/12/19 15:41:18 by jmeirele         ###   ########.fr       */
+/*   Updated: 2024/12/19 16:08:19 by jmeirele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ void	check_invalid_chars(t_game *game, t_map *map)
 	while (i < map->height)
 	{
 		j = 0;
-		while (map->grid[i][j])
+		while (j < map->width)
 		{
 			if (!ft_strchr(map_chars, map->grid[i][j]))
 				ft_print_error(game, "Found invalid char\n");

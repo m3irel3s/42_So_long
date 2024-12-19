@@ -1,24 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   error.c                                            :+:      :+:    :+:   */
+/*   handle_key_press.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jmeirele <jmeirele@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/17 10:50:26 by jmeirele          #+#    #+#             */
-/*   Updated: 2024/12/19 17:29:58 by jmeirele         ###   ########.fr       */
+/*   Created: 2024/12/19 17:24:56 by jmeirele          #+#    #+#             */
+/*   Updated: 2024/12/19 17:31:59 by jmeirele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../inc/so_long.h"
 
-void	ft_print_error(t_game *game, char *str)
+int	key_press(int keycode, void *param)
 {
-	if(game)
-	{
-		free_grid(game->map);
-		free_struct(game);
-	}
-	ft_putstr_fd(str, 2);
-	exit(1);
+	if (keycode == 119)
+		move_player_up(game);
+	else if (keycode == 115)
+		move_player_down(game);
+	else if (keycode == 97)
+		move_player_left(game);
+	else if (keycode == 100)
+		move_player_right(game);
+	else if (keycode == 53)
+		ft_print_error(game, "Game closed, pressed escape\n");
 }

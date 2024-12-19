@@ -38,10 +38,18 @@ define read_map_lines
 	disp fd
 end
 
+define get_player_position
+	disp *pos
+	disp map->grid[i][j]
+	disp i
+	disp j
+end
+
 fs cmd
 file so_long
 break main
-run ./src/maps/invalid_maps/empty.ber
+break get_player_position
+run ./src/maps/valid_maps/long_map.ber
 
 info break
 info watch

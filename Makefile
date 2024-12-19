@@ -23,6 +23,7 @@ SRC = $(SRC_DIR)/main.c \
 		$(UTILS_DIR)/error.c \
 		$(UTILS_DIR)/free.c \
 		$(UTILS_DIR)/map_utils.c \
+		$(UTILS_DIR)/player_utils.c \
 		$(RENDER_DIR)/render_win.c \
 
 VARGS = --leak-check=full --show-leak-kinds=all --track-fds=yes --track-origins=yes

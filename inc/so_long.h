@@ -6,7 +6,7 @@
 /*   By: jmeirele <jmeirele@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/17 10:26:55 by jmeirele          #+#    #+#             */
-/*   Updated: 2024/12/19 15:44:24 by jmeirele         ###   ########.fr       */
+/*   Updated: 2024/12/19 17:32:01 by jmeirele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,9 @@
 # include "../42_Libft/Get_next_line/inc/get_next_line.h"
 # include "../libs/minilibx-linux/mlx.h"
 # include "./macros.h"
+
+# include <X11/X.h>
+# include <X11/keysym.h>
 
 
 //===============================================================//
@@ -80,6 +83,8 @@ void	check_invalid_chars(t_game *game, t_map *map);
 
 void	ft_print_error(t_game *game, char *str);
 void	set_map_height(t_game *game, t_map *map);
+void	set_player_position(t_map *map);
+
 
 //===============================================================//
 //                      INIT STRUCTS FUNCS                       //

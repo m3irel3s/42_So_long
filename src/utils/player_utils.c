@@ -6,13 +6,30 @@
 /*   By: jmeirele <jmeirele@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/19 15:43:40 by jmeirele          #+#    #+#             */
-/*   Updated: 2024/12/19 15:44:19 by jmeirele         ###   ########.fr       */
+/*   Updated: 2024/12/19 16:47:09 by jmeirele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../inc/so_long.h"
 
-void	get_player_position(t_game *game)
+void	set_player_position(t_map *map)
 {
+	int		i;
+	int		j;
 
+	i = 0;
+	while (i < map->height)
+	{
+		j = 0;
+		while (j < map->width)
+		{
+			if (map->grid[i][j] == 'P')
+			{
+				map->player_pos->x = i;
+				map->player_pos->y = j;
+			}
+			j++;
+		}
+	i++;
+	}
 }
