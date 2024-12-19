@@ -6,7 +6,7 @@
 /*   By: jmeirele <jmeirele@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/17 10:26:55 by jmeirele          #+#    #+#             */
-/*   Updated: 2024/12/18 16:58:58 by jmeirele         ###   ########.fr       */
+/*   Updated: 2024/12/19 15:44:24 by jmeirele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,8 @@
 # include "../42_Libft/FT_Printf/inc/ft_printf.h"
 # include "../42_Libft/Get_next_line/inc/get_next_line.h"
 # include "../libs/minilibx-linux/mlx.h"
+# include "./macros.h"
 
-#ifndef M_TRACK
-#define M_TRACK printf("File => %s || Func => %s || Malloc\n", __FILE__, __func__)
-#endif
 
 //===============================================================//
 //                          STRUCTURES                           //
@@ -31,6 +29,17 @@ typedef struct s_pos
 	int	x;
 	int	y;
 }	t_pos;
+
+typedef struct s_img
+{
+	void	*img;
+	char	*addr;
+	int		width;
+	int		height;
+	int		bpp;
+	int		line_len;
+	int		endian;
+}	t_img;
 
 typedef struct s_map
 {
@@ -48,6 +57,9 @@ typedef struct s_game
 {
 	t_map	*map;
 	int		moves;
+	void	*mlx;
+	void	*win;
+	t_img	*img;
 }	t_game;
 
 //===============================================================//
@@ -76,6 +88,13 @@ void	set_map_height(t_game *game, t_map *map);
 t_game	*init_game_struct(void);
 t_map	*init_map_struct(t_game *game);
 t_pos	*init_pos_struct(t_game *game);
+
+//===============================================================//
+//                      RENDER IMAGE FUNCS                       //
+//===============================================================//
+
+void	render_win(t_game *game, t_map *map);
+
 
 void	free_struct(t_game *game);
 void	free_grid(t_map *map);
