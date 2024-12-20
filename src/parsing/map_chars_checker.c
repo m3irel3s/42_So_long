@@ -6,7 +6,7 @@
 /*   By: jmeirele <jmeirele@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/18 10:30:15 by jmeirele          #+#    #+#             */
-/*   Updated: 2024/12/19 16:08:19 by jmeirele         ###   ########.fr       */
+/*   Updated: 2024/12/20 15:49:32 by jmeirele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	check_chars(t_game *game, t_map *map)
 {
 	if (count_occurs(map, 'P') != 1 || count_occurs(map, 'E') != 1 || count_occurs(map, 'C') == 0)
-		ft_print_error(game, "Map with more than 1 exit, or more than 1 player, or dont have any collectables.\n");
+		exit_program(game, "Error\nMap with more than 1 exit, or more than 1 player, or dont have any collectables.\n");
 	map->collects = count_occurs(map, 'C');
 	map->exits = 1;
 	map->players = 1;
@@ -36,7 +36,7 @@ void	check_invalid_chars(t_game *game, t_map *map)
 		while (j < map->width)
 		{
 			if (!ft_strchr(map_chars, map->grid[i][j]))
-				ft_print_error(game, "Found invalid char\n");
+				exit_program(game, "Error\nFound invalid char\n");
 			j++;
 		}
 		i++;

@@ -6,7 +6,7 @@
 /*   By: jmeirele <jmeirele@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/17 10:34:23 by jmeirele          #+#    #+#             */
-/*   Updated: 2024/12/19 17:15:36 by jmeirele         ###   ########.fr       */
+/*   Updated: 2024/12/20 15:54:36 by jmeirele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,13 +25,10 @@ int main(int argc, char **argv)
 	{
 		game = init_game_struct();
 		game->map->map_name = argv[1];
-		set_map_height(game, game->map);
-		map_name_checker(game, game->map);
 		map_validation(game, game->map);
 		render_win(game, game->map);
-		free_grid(game->map);
 		free_struct(game);
 	}
 	else
-		ft_print_error(game, "Error getting arguments\n");
+		exit_program(game, "Error\n getting arguments\n");
 }

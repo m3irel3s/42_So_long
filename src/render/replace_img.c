@@ -1,35 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   player_utils.c                                     :+:      :+:    :+:   */
+/*   replace_img.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jmeirele <jmeirele@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/19 15:43:40 by jmeirele          #+#    #+#             */
-/*   Updated: 2024/12/20 10:53:41 by jmeirele         ###   ########.fr       */
+/*   Created: 2024/12/20 14:42:10 by jmeirele          #+#    #+#             */
+/*   Updated: 2024/12/20 14:51:05 by jmeirele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../inc/so_long.h"
 
-void	set_player_position(t_map *map)
+void replace_img(t_game *game, int x, int y, void *new_img)
 {
-	int		i;
-	int		j;
+	int size = 64;
 
-	i = 0;
-	while (i < map->height)
-	{
-		j = 0;
-		while (j < map->width)
-		{
-			if (map->grid[i][j] == 'P')
-			{
-				map->player_pos.x = i;
-				map->player_pos.y = j;
-			}
-			j++;
-		}
-	i++;
-	}
+	mlx_put_image_to_window(game->mlx, game->win, game->floor_img, y * size, x * size);
+	mlx_put_image_to_window(game->mlx, game->win, new_img, y * size, x * size);
 }

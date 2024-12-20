@@ -45,10 +45,22 @@ define get_player_position
 	disp j
 end
 
+define key_press
+	disp keycode
+
+end
+
+define move_player_left
+	disp map->grid[map->player_pos.x - 1][map->player_pos.y]
+	disp map->grid[map->player_pos.x][map->player_pos.y]
+end
+
+
+
 fs cmd
 file so_long
 break main
-break get_player_position
+break move_player_left
 run ./src/maps/valid_maps/long_map.ber
 
 info break

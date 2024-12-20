@@ -6,13 +6,15 @@
 /*   By: jmeirele <jmeirele@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/17 11:13:08 by jmeirele          #+#    #+#             */
-/*   Updated: 2024/12/18 16:44:47 by jmeirele         ###   ########.fr       */
+/*   Updated: 2024/12/20 15:54:26 by jmeirele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../inc/so_long.h"
 int	map_validation(t_game *game, t_map *map)
 {
+	set_map_height(game, game->map);
+	map_name_checker(game, map);
 	populate_map_grid(game, map);
 	check_width_and_set(game, map);
 	check_chars(game, game->map);
@@ -28,7 +30,7 @@ void	populate_map_grid(t_game *game, t_map *map)
 	i = 0;
 	fd = open(map->map_name, O_RDONLY);
 	if (fd == -1)
-		ft_print_error(game, "Error opening the file descriptor\n");
+		exit_program(game, "Error\nError opening the file descriptor\n");
 	map->grid = malloc(sizeof(char *) * map->height);
 	M_TRACK;
 	line = get_next_line(fd);
@@ -65,7 +67,7 @@ void	check_width_and_set(t_game *game, t_map *map)
 		{
 			close(fd);
 			free(line);
-			ft_print_error(game, "Found different width!\n");
+			exit_program(game, "Error\nFound different width!\n");
 		}
 		free(line);
 		line = get_next_line(fd);

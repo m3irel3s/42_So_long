@@ -14,6 +14,8 @@ VALID_MAPS_DIR = $(SRC_DIR)/maps/valid_maps
 PARSING_DIR = $(SRC_DIR)/parsing
 INITS_DIR = $(SRC_DIR)/inits
 RENDER_DIR = $(SRC_DIR)/render
+HANDLERS_DIR = $(SRC_DIR)/handlers
+MOVES_DIR = $(SRC_DIR)/moves
 
 SRC = $(SRC_DIR)/main.c \
 		$(INITS_DIR)/init_structs.c \
@@ -25,6 +27,10 @@ SRC = $(SRC_DIR)/main.c \
 		$(UTILS_DIR)/map_utils.c \
 		$(UTILS_DIR)/player_utils.c \
 		$(RENDER_DIR)/render_win.c \
+		$(RENDER_DIR)/preload_imgs.c \
+		$(RENDER_DIR)/replace_img.c \
+		$(HANDLERS_DIR)/handle_key_press.c \
+		$(MOVES_DIR)/moves.c \
 
 VARGS = --leak-check=full --show-leak-kinds=all --track-fds=yes --track-origins=yes
 MLXFLAGS = -L ./$(MLX_DIR) -lm -lmlx -Ilmlx -lXext -lX11

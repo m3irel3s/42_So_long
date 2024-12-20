@@ -6,7 +6,7 @@
 /*   By: jmeirele <jmeirele@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/17 12:01:33 by jmeirele          #+#    #+#             */
-/*   Updated: 2024/12/18 12:01:34 by jmeirele         ###   ########.fr       */
+/*   Updated: 2024/12/20 15:48:44 by jmeirele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@ t_game	*init_game_struct(void)
 	M_TRACK;
 	game->map = init_map_struct(game);
 	game->moves = 0;
+	game->mlx = NULL;
+	game->win = NULL;
 	return (game);
 }
 
@@ -40,19 +42,7 @@ t_map	*init_map_struct(t_game *game)
 	map->exits = 0;
 	map->players = 0;
 	map->map_name = NULL;
-	map->player_pos = init_pos_struct(game);
+	map->player_pos.x = 0;
+	map->player_pos.y = 0;
 	return (map);
-}
-
-t_pos	*init_pos_struct(t_game *game)
-{
-	t_pos *position;
-
-	position = malloc(sizeof(t_pos));
-	M_TRACK;
-	if (!position)
-		free_struct(game);
-	position->x = 0;
-	position->y = 0;
-	return (position);
 }

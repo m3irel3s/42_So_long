@@ -6,7 +6,7 @@
 /*   By: jmeirele <jmeirele@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/17 10:26:55 by jmeirele          #+#    #+#             */
-/*   Updated: 2024/12/19 17:32:01 by jmeirele         ###   ########.fr       */
+/*   Updated: 2024/12/20 15:44:35 by jmeirele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,17 +33,6 @@ typedef struct s_pos
 	int	y;
 }	t_pos;
 
-typedef struct s_img
-{
-	void	*img;
-	char	*addr;
-	int		width;
-	int		height;
-	int		bpp;
-	int		line_len;
-	int		endian;
-}	t_img;
-
 typedef struct s_map
 {
 	char	**grid;
@@ -53,7 +42,7 @@ typedef struct s_map
 	int		exits;
 	int		players;
 	char	*map_name;
-	t_pos	*player_pos;
+	t_pos	player_pos;
 }	t_map;
 
 typedef struct s_game
@@ -62,7 +51,12 @@ typedef struct s_game
 	int		moves;
 	void	*mlx;
 	void	*win;
-	t_img	*img;
+
+	void	*wall_img;
+	void	*floor_img;
+	void	*collectable_img;
+	void	*player_img;
+	void	*exit_img;
 }	t_game;
 
 //===============================================================//
@@ -81,7 +75,6 @@ void	check_invalid_chars(t_game *game, t_map *map);
 //                        UTILS FUNCTIONS                        //
 //===============================================================//
 
-void	ft_print_error(t_game *game, char *str);
 void	set_map_height(t_game *game, t_map *map);
 void	set_player_position(t_map *map);
 
@@ -92,16 +85,40 @@ void	set_player_position(t_map *map);
 
 t_game	*init_game_struct(void);
 t_map	*init_map_struct(t_game *game);
-t_pos	*init_pos_struct(t_game *game);
+void	init_variables(t_game *game);
 
 //===============================================================//
 //                      RENDER IMAGE FUNCS                       //
 //===============================================================//
 
+void	preload_images(t_game *game);
 void	render_win(t_game *game, t_map *map);
+void	render_map(t_game *game, t_map *map);
+void	replace_img(t_game *game, int x, int y, void *new_img);
 
+//===============================================================//
+//                       HANDLE KEY_PRESS                        //
+//===============================================================//
 
+int		handle_key_press(int keycode, t_game *game);
+
+//===============================================================//
+//                            MOVES                              //
+//===============================================================//
+
+void	move_player_up(t_game *game, t_map *map);
+void	move_player_down(t_game *game, t_map *map);
+void	move_player_left(t_game *game, t_map *map);
+void	move_player_right(t_game *game, t_map *map);
+
+//===============================================================//
+//                  CONTROL ERRORS AND FREES                     //
+//===============================================================//
+
+void	exit_program(t_game *game, char *str);
 void	free_struct(t_game *game);
 void	free_grid(t_map *map);
+void	free_images(t_game *game);
+
 
 #endif

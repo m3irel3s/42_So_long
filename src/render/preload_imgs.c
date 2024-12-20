@@ -1,35 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   map_utils.c                                        :+:      :+:    :+:   */
+/*   perload_imgs.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jmeirele <jmeirele@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/17 14:48:02 by jmeirele          #+#    #+#             */
-/*   Updated: 2024/12/20 15:35:25 by jmeirele         ###   ########.fr       */
+/*   Created: 2024/12/20 13:31:25 by jmeirele          #+#    #+#             */
+/*   Updated: 2024/12/20 13:38:24 by jmeirele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../inc/so_long.h"
 
-void	set_map_height(t_game *game, t_map *map)
+void	preload_images(t_game *game)
 {
-	int		rows;
-	int		fd;
-	char	*line;
+	int	size;
 
-	rows = 0;
-	fd = open(map->map_name, O_RDONLY);
-	if (fd == -1)
-		exit_program(game, "Error\nError opening the file descriptor\n");
-	line = get_next_line(fd);
-	while (line && *line)
-	{
-		rows++;
-		free(line);
-		line = get_next_line(fd);
-	}
-	free(line);
-	map->height = rows;
-	close(fd);
+	size = 64;
+	game->wall_img = mlx_xpm_file_to_image(game->mlx, WALL, &size, &size);
+	game->floor_img = mlx_xpm_file_to_image(game->mlx, FLOOR, &size, &size);
+	game->collectable_img = mlx_xpm_file_to_image(game->mlx, COLLECTABLE, &size, &size);
+	game->player_img = mlx_xpm_file_to_image(game->mlx, PLAYER_FRONT, &size, &size);
+	game->exit_img = mlx_xpm_file_to_image(game->mlx, EXIT, &size, &size);
 }
