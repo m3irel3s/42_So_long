@@ -31,6 +31,7 @@ SRC = $(SRC_DIR)/main.c \
 		$(RENDER_DIR)/replace_img.c \
 		$(HANDLERS_DIR)/handle_key_press.c \
 		$(MOVES_DIR)/moves.c \
+		$(MOVES_DIR)/moves_conditions.c \
 
 VARGS = --leak-check=full --show-leak-kinds=all --track-fds=yes --track-origins=yes
 MLXFLAGS = -L ./$(MLX_DIR) -lm -lmlx -Ilmlx -lXext -lX11
@@ -50,7 +51,7 @@ TEST_SMALL = ./$(INVALID_MAPS_DIR)/too_small.ber
 
 
 #TEST VALIDS
-VALID_MAP = ./$(VALID_MAPS_DIR)/long_map.ber
+VALID_MAP = ./$(VALID_MAPS_DIR)/map.ber
 
 
 all: $(LIBFT) $(NAME) $(MINILIBX)

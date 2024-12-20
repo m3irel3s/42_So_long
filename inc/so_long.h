@@ -6,7 +6,7 @@
 /*   By: jmeirele <jmeirele@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/17 10:26:55 by jmeirele          #+#    #+#             */
-/*   Updated: 2024/12/20 15:44:35 by jmeirele         ###   ########.fr       */
+/*   Updated: 2024/12/20 17:11:00 by jmeirele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,7 +85,6 @@ void	set_player_position(t_map *map);
 
 t_game	*init_game_struct(void);
 t_map	*init_map_struct(t_game *game);
-void	init_variables(t_game *game);
 
 //===============================================================//
 //                      RENDER IMAGE FUNCS                       //
@@ -110,6 +109,14 @@ void	move_player_up(t_game *game, t_map *map);
 void	move_player_down(t_game *game, t_map *map);
 void	move_player_left(t_game *game, t_map *map);
 void	move_player_right(t_game *game, t_map *map);
+
+void	update_position(t_game *game, t_map *map, int x, int y);
+void	check_exit(t_game *game, t_map *map, int x, int y);
+void	update_collects(t_map *map, int x, int y);
+int		is_valid_move(t_map *map, int x, int y);
+
+
+
 
 //===============================================================//
 //                  CONTROL ERRORS AND FREES                     //

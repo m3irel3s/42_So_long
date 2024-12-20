@@ -56,12 +56,10 @@ define move_player_left
 end
 
 
-
 fs cmd
 file so_long
 break main
-break move_player_left
-run ./src/maps/valid_maps/long_map.ber
+run ./src/maps/valid_maps/map.ber
 
 info break
 info watch
