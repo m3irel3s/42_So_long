@@ -6,7 +6,7 @@
 /*   By: jmeirele <jmeirele@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/17 12:01:33 by jmeirele          #+#    #+#             */
-/*   Updated: 2024/12/23 10:45:17 by jmeirele         ###   ########.fr       */
+/*   Updated: 2024/12/23 11:40:46 by jmeirele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ t_map	*init_map_struct(t_game *game)
 		free_struct(game);
 	M_TRACK;
 	map->grid = NULL;
+	map->grid_copy = NULL;
 	map->width = 0;
 	map->height = 0;
 	map->collects = 0;

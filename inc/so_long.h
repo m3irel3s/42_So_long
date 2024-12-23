@@ -6,7 +6,7 @@
 /*   By: jmeirele <jmeirele@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/17 10:26:55 by jmeirele          #+#    #+#             */
-/*   Updated: 2024/12/23 10:57:37 by jmeirele         ###   ########.fr       */
+/*   Updated: 2024/12/23 12:19:40 by jmeirele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ typedef struct s_pos
 typedef struct s_map
 {
 	char	**grid;
+	char	**grid_copy;
 	int		width;
 	int		height;
 	int		collects;
@@ -77,6 +78,8 @@ void	check_invalid_chars(t_game *game, t_map *map);
 
 void	set_map_height(t_game *game, t_map *map);
 void	set_player_position(t_map *map);
+void	dup_grid(t_game *game, t_map *map);
+
 
 
 //===============================================================//
@@ -116,7 +119,11 @@ void	update_collects(t_map *map, int x, int y);
 int		is_valid_move(t_map *map, int x, int y);
 
 
+//===============================================================//
+//                     VALID PATH CHECKER                        //
+//===============================================================//
 
+void	flood_fill(char **copy, int x, int y);
 
 //===============================================================//
 //                  CONTROL ERRORS AND FREES                     //
@@ -124,7 +131,7 @@ int		is_valid_move(t_map *map, int x, int y);
 
 void	exit_program(t_game *game, char *str);
 void	free_struct(t_game *game);
-void	free_grid(t_map *map);
+void	free_grid(t_map *map, char **grid);
 void	free_images(t_game *game);
 
 

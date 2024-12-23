@@ -6,7 +6,7 @@
 /*   By: jmeirele <jmeirele@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/17 11:13:08 by jmeirele          #+#    #+#             */
-/*   Updated: 2024/12/23 11:22:31 by jmeirele         ###   ########.fr       */
+/*   Updated: 2024/12/23 12:24:15 by jmeirele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,14 @@ int	map_validation(t_game *game, t_map *map)
 	populate_map_grid(game, map);
 	check_width_and_set(game, map);
 	check_chars(game, game->map);
+	dup_grid(game, map);
+	flood_fill(map->grid_copy, map->player_pos.x, map->player_pos.y);
+	for (int i = 0; i < map->height; i++)
+	{
+		for (int j = 0; j < map->width; j++)
+			printf("%c", map->grid_copy[i][j]);
+		printf("\n");
+	}
 	return 0;
 }
 

@@ -16,6 +16,7 @@ INITS_DIR = $(SRC_DIR)/inits
 RENDER_DIR = $(SRC_DIR)/render
 HANDLERS_DIR = $(SRC_DIR)/handlers
 MOVES_DIR = $(SRC_DIR)/moves
+VALID_PATH_CHECKER_DIR = $(SRC_DIR)/valid_path_checker
 
 SRC = $(SRC_DIR)/main.c \
 		$(INITS_DIR)/init_structs.c \
@@ -32,6 +33,7 @@ SRC = $(SRC_DIR)/main.c \
 		$(HANDLERS_DIR)/handle_key_press.c \
 		$(MOVES_DIR)/moves.c \
 		$(MOVES_DIR)/moves_conditions.c \
+		$(VALID_PATH_CHECKER_DIR)/flood_fill.c \
 
 VARGS = --leak-check=full --show-leak-kinds=all --track-fds=yes --track-origins=yes
 MLXFLAGS = -L ./$(MLX_DIR) -lm -lmlx -Ilmlx -lXext -lX11

@@ -47,6 +47,13 @@ end
 
 define key_press
 	disp keycode
+end
+
+define dup_grid
+	disp map->grid_copy[i][j]
+	disp map->grid[i][j]
+	dips i
+	disp j
 
 end
 
@@ -59,6 +66,7 @@ end
 fs cmd
 file so_long
 break main
+break dup_grid
 run ./src/maps/valid_maps/map.ber
 
 info break

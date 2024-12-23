@@ -6,7 +6,7 @@
 /*   By: jmeirele <jmeirele@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/17 14:48:02 by jmeirele          #+#    #+#             */
-/*   Updated: 2024/12/20 15:35:25 by jmeirele         ###   ########.fr       */
+/*   Updated: 2024/12/23 12:03:29 by jmeirele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,4 +32,31 @@ void	set_map_height(t_game *game, t_map *map)
 	free(line);
 	map->height = rows;
 	close(fd);
+}
+
+void	dup_grid(t_game *game, t_map *map)
+{
+	int	i;
+	int	j;
+
+	i = 0;
+	j = 0;
+	map->grid_copy = malloc(sizeof(char *) * map->height);
+	M_TRACK;
+	if (!map->grid_copy)
+		exit_program(game, "Failed to allocate memory for grid copy\n");
+	while (i < map->height)
+	{
+		j = 0;
+		map->grid_copy[i] = malloc(sizeof(char) * map->width + 1);
+		M_TRACK;
+		if (!map->grid_copy[i])
+			exit_program(game, "Failed to allocate memory for grid copy\n");
+		while (j < map->width)
+		{
+			map->grid_copy[i][j] = map->grid[i][j];
+			j++;
+		}
+		i++;
+	}
 }

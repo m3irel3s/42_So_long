@@ -6,7 +6,7 @@
 /*   By: jmeirele <jmeirele@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/17 11:54:37 by jmeirele          #+#    #+#             */
-/*   Updated: 2024/12/23 10:37:53 by jmeirele         ###   ########.fr       */
+/*   Updated: 2024/12/23 12:01:40 by jmeirele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,8 @@ void	free_struct(t_game *game)
 	{
 		if (game->map)
 		{
-			free_grid(game->map);
+			free_grid(game->map, game->map->grid);
+			free_grid(game->map, game->map->grid_copy);
 			free(game->map);
 		}
 		free_images(game);
@@ -45,15 +46,15 @@ void	free_images(t_game *game)
 		mlx_destroy_image(game->mlx, game->exit_img);
 }
 
-void	free_grid(t_map *map)
+void	free_grid(t_map *map, char **grid)
 {
 	int	i;
 
-	if (map->grid)
+	if (grid)
 	{
 		i = 0;
 		while (i < map->height)
-			free(map->grid[i++]);
-		free(map->grid);
-	}
+			free(grid[i++]);
+		free(grid);
+	}	
 }
