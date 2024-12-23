@@ -6,7 +6,7 @@
 /*   By: jmeirele <jmeirele@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/20 17:07:53 by jmeirele          #+#    #+#             */
-/*   Updated: 2024/12/20 17:14:41 by jmeirele         ###   ########.fr       */
+/*   Updated: 2024/12/23 11:02:16 by jmeirele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ void move_player_up(t_game *game, t_map *map)
 	{
 		update_collects(map, x - 1, y);
 		update_position(game, map, x - 1, y);
-		check_exit(game, map, x - 1, y);
 	}
 }
 
@@ -35,7 +34,6 @@ void move_player_down(t_game *game, t_map *map)
 	{
 		update_collects(map, x + 1, y);
 		update_position(game, map, x + 1, y);
-		check_exit(game, map, x + 1, y);
 	}
 }
 
@@ -48,7 +46,6 @@ void move_player_left(t_game *game, t_map *map)
 	{
 		update_collects(map, x, y - 1);
 		update_position(game, map, x, y - 1);
-		check_exit(game, map, x, y - 1);
 	}
 }
 
@@ -61,6 +58,5 @@ void move_player_right(t_game *game, t_map *map)
 	{
 		update_collects(map, x, y + 1);
 		update_position(game, map, x, y + 1);
-		check_exit(game, map, x, y + 1);
 	}
 }

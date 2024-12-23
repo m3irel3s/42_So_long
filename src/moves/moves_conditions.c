@@ -6,7 +6,7 @@
 /*   By: jmeirele <jmeirele@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/20 16:57:05 by jmeirele          #+#    #+#             */
-/*   Updated: 2024/12/20 17:14:40 by jmeirele         ###   ########.fr       */
+/*   Updated: 2024/12/23 11:22:33 by jmeirele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ void	update_collects(t_map *map, int x, int y)
 
 void	update_position(t_game *game, t_map *map, int x, int y)
 {
+	check_exit(game, map, x, y);
 	replace_img(game, map->player_pos.x, map->player_pos.y, game->floor_img);
 	map->grid[map->player_pos.x][map->player_pos.y] = '0';
 	map->player_pos.x = x;
