@@ -6,7 +6,7 @@
 /*   By: jmeirele <jmeirele@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/17 11:54:37 by jmeirele          #+#    #+#             */
-/*   Updated: 2024/12/23 12:01:40 by jmeirele         ###   ########.fr       */
+/*   Updated: 2024/12/23 22:08:51 by jmeirele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,9 @@ void	free_struct(t_game *game)
 	{
 		if (game->map)
 		{
+			if (game->map->grid_copy)
+				free_grid(game->map, game->map->grid_copy);
 			free_grid(game->map, game->map->grid);
-			free_grid(game->map, game->map->grid_copy);
 			free(game->map);
 		}
 		free_images(game);
@@ -34,16 +35,19 @@ void	free_struct(t_game *game)
 
 void	free_images(t_game *game)
 {
-	if (game->wall_img)
-		mlx_destroy_image(game->mlx, game->wall_img);
-	if (game->floor_img)
-		mlx_destroy_image(game->mlx, game->floor_img);
-	if (game->collectable_img)
-		mlx_destroy_image(game->mlx, game->collectable_img);
-	if (game->player_img)
-		mlx_destroy_image(game->mlx, game->player_img);
-	if (game->exit_img)
-		mlx_destroy_image(game->mlx, game->exit_img);
+	if (game->mlx)
+	{
+		if (game->wall_img)
+			mlx_destroy_image(game->mlx, game->wall_img);
+		if (game->floor_img)
+			mlx_destroy_image(game->mlx, game->floor_img);
+		if (game->collectable_img)
+			mlx_destroy_image(game->mlx, game->collectable_img);
+		if (game->player_img)
+			mlx_destroy_image(game->mlx, game->player_img);
+		if (game->exit_img)
+			mlx_destroy_image(game->mlx, game->exit_img);
+	}
 }
 
 void	free_grid(t_map *map, char **grid)

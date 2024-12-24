@@ -6,7 +6,7 @@
 /*   By: jmeirele <jmeirele@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/17 10:34:23 by jmeirele          #+#    #+#             */
-/*   Updated: 2024/12/23 11:51:31 by jmeirele         ###   ########.fr       */
+/*   Updated: 2024/12/23 22:16:57 by jmeirele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,8 @@
 int main(int argc, char **argv)
 {
 	t_game	*game;
-	t_map	*map;
-	t_pos	*pos;
 
 	game = NULL;
-	map = NULL;
-	pos = NULL;
 	if (argc == 2)
 	{
 		game = init_game_struct();

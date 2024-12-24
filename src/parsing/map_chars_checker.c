@@ -6,7 +6,7 @@
 /*   By: jmeirele <jmeirele@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/18 10:30:15 by jmeirele          #+#    #+#             */
-/*   Updated: 2024/12/20 15:49:32 by jmeirele         ###   ########.fr       */
+/*   Updated: 2024/12/23 21:32:14 by jmeirele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 void	check_chars(t_game *game, t_map *map)
 {
-	if (count_occurs(map, 'P') != 1 || count_occurs(map, 'E') != 1 || count_occurs(map, 'C') == 0)
+	if (count_occurs(map, map->grid, 'P') != 1 || count_occurs(map, map->grid, 'E') != 1 || count_occurs(map, map->grid, 'C') == 0)
 		exit_program(game, "Error\nMap with more than 1 exit, or more than 1 player, or dont have any collectables.\n");
-	map->collects = count_occurs(map, 'C');
+	map->collects = count_occurs(map, map->grid, 'C');
 	map->exits = 1;
 	map->players = 1;
 	check_invalid_chars(game, map);
@@ -43,7 +43,7 @@ void	check_invalid_chars(t_game *game, t_map *map)
 	}
 }
 
-int	count_occurs(t_map *map, char c)
+int	count_occurs(t_map *map, char **grid, char c)
 {
 	int	i;
 	int	j;
@@ -54,9 +54,9 @@ int	count_occurs(t_map *map, char c)
 	while (i < map->height)
 	{
 		j = 0;
-		while (map->grid[i][j])
+		while (j < map->grid[i][j])
 		{
-			if (map->grid[i][j] == c)
+			if (grid[i][j] == c)
 				count++;
 			j++;
 		}

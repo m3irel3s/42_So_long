@@ -11,6 +11,7 @@ MLX_DIR = libs/minilibx-linux
 UTILS_DIR = $(SRC_DIR)/utils
 INVALID_MAPS_DIR = $(SRC_DIR)/maps/invalid_maps
 VALID_MAPS_DIR = $(SRC_DIR)/maps/valid_maps
+INVALID_PATHS_DIR = $(SRC_DIR)/maps/invalid_paths
 PARSING_DIR = $(SRC_DIR)/parsing
 INITS_DIR = $(SRC_DIR)/inits
 RENDER_DIR = $(SRC_DIR)/render
@@ -30,12 +31,14 @@ SRC = $(SRC_DIR)/main.c \
 		$(RENDER_DIR)/render_win.c \
 		$(RENDER_DIR)/preload_imgs.c \
 		$(RENDER_DIR)/replace_img.c \
+		$(RENDER_DIR)/render_moves.c \
 		$(HANDLERS_DIR)/handle_key_press.c \
 		$(MOVES_DIR)/moves.c \
 		$(MOVES_DIR)/moves_conditions.c \
 		$(VALID_PATH_CHECKER_DIR)/flood_fill.c \
 
-VARGS = --leak-check=full --show-leak-kinds=all --track-fds=yes --track-origins=yes
+# VARGS = --leak-check=full --show-leak-kinds=all --track-fds=yes --track-origins=yes
+VARGS = --track-origins=yes
 MLXFLAGS = -L ./$(MLX_DIR) -lm -lmlx -Ilmlx -lXext -lX11
 
 #TEST INVALIDS
@@ -53,7 +56,7 @@ TEST_SMALL = ./$(INVALID_MAPS_DIR)/too_small.ber
 
 
 #TEST VALIDS
-VALID_MAP = ./$(VALID_MAPS_DIR)/map.ber
+VALID_MAP = ./$(VALID_MAPS_DIR)/.ber
 
 
 all: $(LIBFT) $(NAME) $(MINILIBX)
@@ -89,7 +92,7 @@ get_log:
 	fi
 
 val: $(NAME) $(SRC)
-	valgrind $(VARGS) ./$(NAME) $(VALID_MAP)
+	valgrind $(VARGS) ./$(NAME) $(VALID_MAPS_DIR)/long_map.ber
 
 #TESTS FOR INVALID MAPS
 test_empty: $(NAME)
@@ -128,7 +131,7 @@ test_small: $(NAME)
 #TEST VALID MAPS
 
 test_valid_1: $(NAME)
-	./$(NAME) $(VALID_MAP)
+	./$(NAME) $(VALID_MAPS_DIR)/long_map.ber
 
 fclean: clean
 	rm -f $(NAME)

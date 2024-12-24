@@ -6,7 +6,7 @@
 /*   By: jmeirele <jmeirele@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/17 10:26:55 by jmeirele          #+#    #+#             */
-/*   Updated: 2024/12/23 12:19:40 by jmeirele         ###   ########.fr       */
+/*   Updated: 2024/12/24 00:36:50 by jmeirele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ void	map_name_checker(t_game *game, t_map *map);
 int		map_validation(t_game *game, t_map *map);
 void	populate_map_grid(t_game *game, t_map *map);
 void	check_width_and_set(t_game *game, t_map *map);
-int		count_occurs(t_map *map, char c);
+int		count_occurs(t_map *map, char **grid, char c);
 void	check_chars(t_game *game, t_map *map);
 void	check_invalid_chars(t_game *game, t_map *map);
 
@@ -97,6 +97,7 @@ void	preload_images(t_game *game);
 void	render_win(t_game *game, t_map *map);
 void	render_map(t_game *game, t_map *map);
 void	replace_img(t_game *game, int x, int y, void *new_img);
+void	render_moves(t_game *game);
 
 //===============================================================//
 //                       HANDLE KEY_PRESS                        //
@@ -123,6 +124,7 @@ int		is_valid_move(t_map *map, int x, int y);
 //                     VALID PATH CHECKER                        //
 //===============================================================//
 
+void	check_valid_path(t_game *game, t_map *map);
 void	flood_fill(char **copy, int x, int y);
 
 //===============================================================//

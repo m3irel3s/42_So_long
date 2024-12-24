@@ -6,7 +6,7 @@
 /*   By: jmeirele <jmeirele@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/19 17:24:56 by jmeirele          #+#    #+#             */
-/*   Updated: 2024/12/20 15:34:39 by jmeirele         ###   ########.fr       */
+/*   Updated: 2024/12/23 22:39:40 by jmeirele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,5 +27,6 @@ int	handle_key_press(int keycode, t_game *game)
 	printf("Player position => x:[%d] y:[%d]\n", game->map->player_pos.x, game->map->player_pos.y);
 	printf("Moves => %d\n", game->moves);
 	printf("Collects => %d\n", game->map->collects);
+	render_moves(game);
 	return (0);
 }

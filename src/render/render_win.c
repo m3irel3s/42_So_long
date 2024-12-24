@@ -6,7 +6,7 @@
 /*   By: jmeirele <jmeirele@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/18 17:20:09 by jmeirele          #+#    #+#             */
-/*   Updated: 2024/12/23 10:45:08 by jmeirele         ###   ########.fr       */
+/*   Updated: 2024/12/24 00:36:59 by jmeirele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,8 @@
 
 void	render_win(t_game *game, t_map *map)
 {
-	set_player_position(map);
 	game->mlx = mlx_init();
-	game->win = mlx_new_window(game->mlx, map->width * 64, map->height * 64, "SO LONG");
+	game->win = mlx_new_window(game->mlx, map->width * 64, (map->height * 64) + 64, "SO LONG");
 	preload_images(game);
 	render_map(game, map);
 	mlx_hook(game->win, KeyPress, KeyPressMask, handle_key_press, game);

@@ -6,26 +6,21 @@
 /*   By: jmeirele <jmeirele@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/17 11:13:08 by jmeirele          #+#    #+#             */
-/*   Updated: 2024/12/23 12:24:15 by jmeirele         ###   ########.fr       */
+/*   Updated: 2024/12/23 21:36:02 by jmeirele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../inc/so_long.h"
+
 int	map_validation(t_game *game, t_map *map)
 {
-	set_map_height(game, game->map);
+	set_map_height(game, map);
 	map_name_checker(game, map);
 	populate_map_grid(game, map);
 	check_width_and_set(game, map);
-	check_chars(game, game->map);
-	dup_grid(game, map);
-	flood_fill(map->grid_copy, map->player_pos.x, map->player_pos.y);
-	for (int i = 0; i < map->height; i++)
-	{
-		for (int j = 0; j < map->width; j++)
-			printf("%c", map->grid_copy[i][j]);
-		printf("\n");
-	}
+	check_chars(game, map);
+	set_player_position(map);
+	check_valid_path(game, map);
 	return 0;
 }
 
