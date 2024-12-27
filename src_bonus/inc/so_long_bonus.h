@@ -1,23 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   so_long.h                                          :+:      :+:    :+:   */
+/*   so_long_bonus.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jmeirele <jmeirele@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/17 10:26:55 by jmeirele          #+#    #+#             */
-/*   Updated: 2024/12/27 16:42:20 by jmeirele         ###   ########.fr       */
+/*   Updated: 2024/12/27 16:51:45 by jmeirele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SO_LONG_H
-# define SO_LONG_H
+#ifndef SO_LONG_H_BONUS
+# define SO_LONG_H_BONUS
 
 # include "../../42_Libft/FT_Libft/inc/libft.h"
 # include "../../42_Libft/FT_Printf/inc/ft_printf.h"
 # include "../../42_Libft/Get_next_line/inc/get_next_line.h"
 # include "../../libs/minilibx-linux/mlx.h"
-# include "./macros.h"
+# include "./macros_bonus.h"
 
 # include <X11/X.h>
 # include <X11/keysym.h>
@@ -62,6 +62,8 @@ typedef struct s_game
 	void	*p_front;
 	void	*opened_exit;
 	void	*closed_exit;
+	void	*hud_moves;
+	void	*zombie;
 }	t_game;
 
 //===============================================================//
