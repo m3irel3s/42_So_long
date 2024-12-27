@@ -6,11 +6,11 @@
 /*   By: jmeirele <jmeirele@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/19 17:24:56 by jmeirele          #+#    #+#             */
-/*   Updated: 2024/12/23 22:39:40 by jmeirele         ###   ########.fr       */
+/*   Updated: 2024/12/27 15:52:33 by jmeirele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../inc/so_long.h"
+#include "../inc/so_long.h"
 
 int	handle_key_press(int keycode, t_game *game)
 {
@@ -24,9 +24,9 @@ int	handle_key_press(int keycode, t_game *game)
 		move_player_right(game, game->map);
 	else if (keycode == XK_Escape)
 		exit_program(game, "Game closed, pressed escape\n");
-	printf("Player position => x:[%d] y:[%d]\n", game->map->player_pos.x, game->map->player_pos.y);
+	if (game->map->collects == 0)
+		mlx_put_image_to_window(game->mlx, game->win, game->opened_exit,
+			game->map->exit_pos.y * 64, game->map->exit_pos.x * 64);
 	printf("Moves => %d\n", game->moves);
-	printf("Collects => %d\n", game->map->collects);
-	render_moves(game);
 	return (0);
 }

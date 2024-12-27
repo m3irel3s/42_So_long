@@ -31,7 +31,6 @@ SRC = $(SRC_DIR)/main.c \
 		$(RENDER_DIR)/render_win.c \
 		$(RENDER_DIR)/preload_imgs.c \
 		$(RENDER_DIR)/replace_img.c \
-		$(RENDER_DIR)/render_moves.c \
 		$(HANDLERS_DIR)/handle_key_press.c \
 		$(MOVES_DIR)/moves.c \
 		$(MOVES_DIR)/moves_conditions.c \
@@ -41,23 +40,8 @@ SRC = $(SRC_DIR)/main.c \
 VARGS = --track-origins=yes
 MLXFLAGS = -L ./$(MLX_DIR) -lm -lmlx -Ilmlx -lXext -lX11
 
-#TEST INVALIDS
-TEST_EMPTY = ./$(INVALID_MAPS_DIR)/empty.ber
-TEST_CHARS = ./$(INVALID_MAPS_DIR)/invalid_chars.ber
-TEST_PATH = ./$(INVALID_MAPS_DIR)/invalid_path.ber
-TEST_WALL = ./$(INVALID_MAPS_DIR)/missing_wall.ber
-TEST_EXIT = ./$(INVALID_MAPS_DIR)/multiple_exits.ber
-TEST_START = ./$(INVALID_MAPS_DIR)/multiple_starts.ber
-TEST_COLLECT = ./$(INVALID_MAPS_DIR)/no_collects.ber
-TEST_NO_EXIT = ./$(INVALID_MAPS_DIR)/no_exit.ber
-TEST_NO_START = ./$(INVALID_MAPS_DIR)/no_start.ber
-TEST_NO_RECT = ./$(INVALID_MAPS_DIR)/non_rect.ber
-TEST_SMALL = ./$(INVALID_MAPS_DIR)/too_small.ber
-
-
 #TEST VALIDS
 VALID_MAP = ./$(VALID_MAPS_DIR)/.ber
-
 
 all: $(LIBFT) $(NAME) $(MINILIBX)
 
@@ -94,44 +78,8 @@ get_log:
 val: $(NAME) $(SRC)
 	valgrind $(VARGS) ./$(NAME) $(VALID_MAPS_DIR)/long_map.ber
 
-#TESTS FOR INVALID MAPS
-test_empty: $(NAME)
-	./$(NAME) $(TEST_EMPTY)
-
-test_chars: $(NAME)
-	./$(NAME) $(TEST_CHARS)
-
-test_path: $(NAME)
-	./$(NAME) $(TEST_PATH)
-
-test_wall: $(NAME)
-	./$(NAME) $(TEST_WALL)
-
-test_exit: $(NAME)
-	./$(NAME) $(TEST_EXIT)
-
-test_start: $(NAME)
-	./$(NAME) $(TEST_START)
-
-test_collect: $(NAME)
-	./$(NAME) $(TEST_COLLECT)
-
-test_no_exit: $(NAME)
-	./$(NAME) $(TEST_NO_EXIT)
-
-test_no_start: $(NAME)
-	./$(NAME) $(TEST_NO_START)
-
-test_no_rect: $(NAME)
-	./$(NAME) $(TEST_NO_RECT)
-
-test_small: $(NAME)
-	./$(NAME) $(TEST_SMALL)
-
-#TEST VALID MAPS
-
 test_valid_1: $(NAME)
-	./$(NAME) $(VALID_MAPS_DIR)/long_map.ber
+	./$(NAME) $(VALID_MAPS_DIR)/map.ber
 
 fclean: clean
 	rm -f $(NAME)

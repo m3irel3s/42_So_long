@@ -6,20 +6,16 @@
 /*   By: jmeirele <jmeirele@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/19 11:08:25 by jmeirele          #+#    #+#             */
-/*   Updated: 2024/12/23 21:09:53 by jmeirele         ###   ########.fr       */
+/*   Updated: 2024/12/27 15:59:22 by jmeirele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef MACROS_H
-#define MACROS_H
+# define MACROS_H
 
 //===============================================================//
 //                            MACROS                             //
 //===============================================================//
-
-#ifndef M_TRACK
-#define M_TRACK printf("File => %s || Func => %s || Malloc\n", __FILE__, __func__)
-#endif
 
 //===============================================================//
 //                            VALUES                             //
@@ -27,17 +23,18 @@
 
 # define SIZE 64
 
-
 //===============================================================//
 //                            IMAGES                             //
 //===============================================================//
 
-# define PLAYER_FRONT "./assets/front.xpm"
-# define COLLECTABLE "./assets/collectable.xpm"
+# define P_FRONT "./assets/player_front.xpm"
+# define P_BACK "./assets/player_back.xpm"
+# define P_LEFT "./assets/player_left.xpm"
+# define P_RIGHT "./assets/player_right.xpm"
+# define COLLECT "./assets/collect.xpm"
 # define WALL "./assets/wall.xpm"
 # define FLOOR "./assets/floor.xpm"
-# define EXIT "./assets/exit.xpm"
-
-
+# define C_EXIT "./assets/closed_exit.xpm"
+# define O_EXIT "./assets/opened_exit.xpm"
 
 #endif

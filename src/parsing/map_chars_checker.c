@@ -6,16 +6,18 @@
 /*   By: jmeirele <jmeirele@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/18 10:30:15 by jmeirele          #+#    #+#             */
-/*   Updated: 2024/12/23 21:32:14 by jmeirele         ###   ########.fr       */
+/*   Updated: 2024/12/27 16:36:55 by jmeirele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../inc/so_long.h"
+#include "../inc/so_long.h"
 
 void	check_chars(t_game *game, t_map *map)
 {
-	if (count_occurs(map, map->grid, 'P') != 1 || count_occurs(map, map->grid, 'E') != 1 || count_occurs(map, map->grid, 'C') == 0)
-		exit_program(game, "Error\nMap with more than 1 exit, or more than 1 player, or dont have any collectables.\n");
+	if (count_occurs(map, map->grid, 'P') != 1 || count_occurs
+		(map, map->grid, 'E') != 1 || count_occurs(map, map->grid, 'C') == 0)
+		exit_program(game, "Error\nMap with more than 1 exit, or more than \
+1 player, or don't have any collectables.\n");
 	map->collects = count_occurs(map, map->grid, 'C');
 	map->exits = 1;
 	map->players = 1;
@@ -47,7 +49,7 @@ int	count_occurs(t_map *map, char **grid, char c)
 {
 	int	i;
 	int	j;
-	int count;
+	int	count;
 
 	i = 0;
 	count = 0;
@@ -60,7 +62,7 @@ int	count_occurs(t_map *map, char **grid, char c)
 				count++;
 			j++;
 		}
-	i++;
+		i++;
 	}
 	return (count);
 }

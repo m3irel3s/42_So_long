@@ -6,11 +6,11 @@
 /*   By: jmeirele <jmeirele@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/19 15:43:40 by jmeirele          #+#    #+#             */
-/*   Updated: 2024/12/20 10:53:41 by jmeirele         ###   ########.fr       */
+/*   Updated: 2024/12/27 15:31:08 by jmeirele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../inc/so_long.h"
+#include "../inc/so_long.h"
 
 void	set_player_position(t_map *map)
 {
@@ -30,6 +30,28 @@ void	set_player_position(t_map *map)
 			}
 			j++;
 		}
-	i++;
+		i++;
+	}
+}
+
+void	set_exit_position(t_map *map)
+{
+	int		i;
+	int		j;
+
+	i = 0;
+	while (i < map->height)
+	{
+		j = 0;
+		while (j < map->width)
+		{
+			if (map->grid[i][j] == 'E')
+			{
+				map->exit_pos.x = i;
+				map->exit_pos.y = j;
+			}
+			j++;
+		}
+		i++;
 	}
 }

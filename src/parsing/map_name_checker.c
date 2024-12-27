@@ -6,11 +6,11 @@
 /*   By: jmeirele <jmeirele@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/17 11:11:17 by jmeirele          #+#    #+#             */
-/*   Updated: 2024/12/20 15:35:04 by jmeirele         ###   ########.fr       */
+/*   Updated: 2024/12/27 15:13:24 by jmeirele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../inc/so_long.h"
+#include "../inc/so_long.h"
 
 void	map_name_checker(t_game *game, t_map *map)
 {

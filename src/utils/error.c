@@ -6,11 +6,11 @@
 /*   By: jmeirele <jmeirele@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/17 10:50:26 by jmeirele          #+#    #+#             */
-/*   Updated: 2024/12/20 15:32:13 by jmeirele         ###   ########.fr       */
+/*   Updated: 2024/12/27 15:03:06 by jmeirele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../inc/so_long.h"
+#include "../inc/so_long.h"
 
 void	exit_program(t_game *game, char *str)
 {
