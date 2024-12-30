@@ -63,6 +63,8 @@ SRC_BONUS	=	$(SRC_BONUS_DIR)/main.c \
 
 MLXFLAGS    = -L ./$(MLX_DIR) -lm -lmlx -Ilmlx -lXext -lX11
 
+VARGS = --leak-check=full --show-leak-kinds=all --track-fds=yes --track-origins=yes
+
 all: $(LIBFT) $(NAME)
 
 bonus: $(LIBFT) $(NAME_BONUS)
@@ -82,6 +84,29 @@ $(LIBFT): $(LIBFT_DIR)
 
 $(MINILIBX):
 	$(MAKE) -C ./libs/minilibx-linux
+
+
+gdb: all $(NAME)
+	tmux split-window -h "gdb --tui --args --log-file=gdb.txt ./$(NAME)"
+	tmux resize-pane -L 5
+	make get_log
+
+get_log:
+	rm -f gdb.txt
+	touch gdb.txt
+	@if command -v lnav; then \
+		lnav gdb.txt; \
+	else \
+		tail -f gdb.txt; \
+	fi
+
+VALID_MAP = ./src/maps/valid_maps/map1.ber
+
+val: $(NAME) $(SRC)
+	valgrind $(VARGS) ./$(NAME) $(VALID_MAP)
+
+val_bonus:  $(NAME_BONUS) $(SRC_BONUS)
+	valgrind $(VARGS) ./$(NAME_BONUS) $(VALID_MAP)
 
 clean:
 	rm -f $(NAME) $(NAME_BONUS)

@@ -6,7 +6,7 @@
 /*   By: jmeirele <jmeirele@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/20 16:57:05 by jmeirele          #+#    #+#             */
-/*   Updated: 2024/12/27 17:07:57 by jmeirele         ###   ########.fr       */
+/*   Updated: 2024/12/30 14:41:42 by jmeirele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,7 @@ void	update_position(t_game *game, int x, int y, void *new_img)
 	map->grid[x][y] = 'P';
 	replace_img(game, x, y, new_img);
 	game->moves++;
+	ft_printf("Moves => %d\n", game->moves);
 	render_moves(game);
 }
 

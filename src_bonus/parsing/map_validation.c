@@ -6,7 +6,7 @@
 /*   By: jmeirele <jmeirele@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/17 11:13:08 by jmeirele          #+#    #+#             */
-/*   Updated: 2024/12/27 16:50:02 by jmeirele         ###   ########.fr       */
+/*   Updated: 2024/12/30 14:26:53 by jmeirele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,20 @@ int	map_validation(t_game *game, t_map *map)
 	set_player_position(map);
 	set_exit_position(map);
 	check_walls(game, map);
+	for (int i = 0; i < map->height; i++)
+	{
+		for (int j = 0; j < map->width; j++)
+			printf("%c", map->grid[i][j]);
+		printf("\n");
+	}
+	printf("\n");
 	check_valid_path(game, map);
+	for (int i = 0; i < map->height; i++)
+	{
+		for (int j = 0; j < map->width; j++)
+			printf("%c", map->grid_copy[i][j]);
+		printf("\n");
+	}
 	return (0);
 }
 

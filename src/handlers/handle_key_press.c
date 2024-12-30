@@ -6,7 +6,7 @@
 /*   By: jmeirele <jmeirele@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/19 17:24:56 by jmeirele          #+#    #+#             */
-/*   Updated: 2024/12/27 15:52:33 by jmeirele         ###   ########.fr       */
+/*   Updated: 2024/12/30 14:34:49 by jmeirele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,5 @@ int	handle_key_press(int keycode, t_game *game)
 	if (game->map->collects == 0)
 		mlx_put_image_to_window(game->mlx, game->win, game->opened_exit,
 			game->map->exit_pos.y * 64, game->map->exit_pos.x * 64);
-	printf("Moves => %d\n", game->moves);
 	return (0);
 }
