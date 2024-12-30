@@ -6,7 +6,7 @@
 /*   By: jmeirele <jmeirele@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/20 16:57:05 by jmeirele          #+#    #+#             */
-/*   Updated: 2024/12/30 14:41:42 by jmeirele         ###   ########.fr       */
+/*   Updated: 2024/12/30 15:43:32 by jmeirele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,8 +44,15 @@ void	update_position(t_game *game, int x, int y, void *new_img)
 	render_moves(game);
 }
 
+void	check_zombie(t_game *game, t_map *map, int x, int y)
+{
+	if (map->grid[x][y] == 'X')
+		exit_program(game, "Game Over! The zombie got you... \
+Better luck next time!\n");
+}
+
 void	check_exit(t_game *game, t_map *map, int x, int y)
 {
 	if (map->grid[x][y] == 'E' && map->collects == 0)
-		exit_program(game, "Game Over! You've collected all items\n");
+		exit_program(game, "You win! The undead have been defeated.\n");
 }

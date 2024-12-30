@@ -6,12 +6,12 @@
 /*   By: jmeirele <jmeirele@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/17 10:26:55 by jmeirele          #+#    #+#             */
-/*   Updated: 2024/12/30 15:04:22 by jmeirele         ###   ########.fr       */
+/*   Updated: 2024/12/30 15:42:04 by jmeirele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SO_LONG_H_BONUS
-# define SO_LONG_H_BONUS
+#ifndef SO_LONG_BONUS_H
+# define SO_LONG_BONUS_H
 
 # include "../../42_Libft/FT_Libft/inc/libft.h"
 # include "../../42_Libft/FT_Printf/inc/ft_printf.h"
@@ -125,6 +125,7 @@ void	update_position(t_game *game, int x, int y, void *new_img);
 void	check_exit(t_game *game, t_map *map, int x, int y);
 void	update_collects(t_map *map, int x, int y);
 int		is_valid_move(t_map *map, int x, int y);
+void	check_zombie(t_game *game, t_map *map, int x, int y);
 
 //===============================================================//
 //                     VALID PATH CHECKER                        //
