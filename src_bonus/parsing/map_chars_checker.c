@@ -6,7 +6,7 @@
 /*   By: jmeirele <jmeirele@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/18 10:30:15 by jmeirele          #+#    #+#             */
-/*   Updated: 2024/12/30 14:30:13 by jmeirele         ###   ########.fr       */
+/*   Updated: 2024/12/30 14:53:26 by jmeirele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ void	check_invalid_chars(t_game *game, t_map *map)
 	int		i;
 	int		j;
 
-	map_chars = "01CEP\n";
+	map_chars = "01CEPX\n";
 	i = 0;
 	while (i < map->height)
 	{

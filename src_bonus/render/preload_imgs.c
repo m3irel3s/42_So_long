@@ -6,7 +6,7 @@
 /*   By: jmeirele <jmeirele@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/20 13:31:25 by jmeirele          #+#    #+#             */
-/*   Updated: 2024/12/27 16:50:02 by jmeirele         ###   ########.fr       */
+/*   Updated: 2024/12/30 14:53:48 by jmeirele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,4 +26,5 @@ void	preload_images(t_game *game)
 	game->p_left = mlx_xpm_file_to_image(game->mlx, P_LEFT, &size, &size);
 	game->closed_exit = mlx_xpm_file_to_image(game->mlx, C_EXIT, &size, &size);
 	game->opened_exit = mlx_xpm_file_to_image(game->mlx, O_EXIT, &size, &size);
+	game->zombie = mlx_xpm_file_to_image(game->mlx, ZOMBIE, &size, &size);
 }

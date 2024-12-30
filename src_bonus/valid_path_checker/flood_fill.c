@@ -6,7 +6,7 @@
 /*   By: jmeirele <jmeirele@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/23 11:24:43 by jmeirele          #+#    #+#             */
-/*   Updated: 2024/12/27 16:50:02 by jmeirele         ###   ########.fr       */
+/*   Updated: 2024/12/30 14:56:33 by jmeirele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	check_valid_path(t_game *game, t_map *map)
 
 void	flood_fill(char **copy, int x, int y)
 {
-	if (copy[x][y] == '1' || copy[x][y] == 'V')
+	if (copy[x][y] == '1' || copy[x][y] == 'V' || copy[x][y] == 'X')
 		return ;
 	if (copy[x][y] == 'E')
 	{

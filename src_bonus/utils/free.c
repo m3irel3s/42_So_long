@@ -6,7 +6,7 @@
 /*   By: jmeirele <jmeirele@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/17 11:54:37 by jmeirele          #+#    #+#             */
-/*   Updated: 2024/12/27 16:50:02 by jmeirele         ###   ########.fr       */
+/*   Updated: 2024/12/30 15:14:38 by jmeirele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,10 @@ void	free_images(t_game *game)
 			mlx_destroy_image(game->mlx, game->closed_exit);
 		if (game->opened_exit)
 			mlx_destroy_image(game->mlx, game->opened_exit);
+		if (game->zombie)
+			mlx_destroy_image(game->mlx, game->zombie);
+		if (game->hud_moves)
+			mlx_destroy_image(game->mlx, game->hud_moves);
 	}
 }
 

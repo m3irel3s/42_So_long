@@ -6,7 +6,7 @@
 /*   By: jmeirele <jmeirele@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/17 10:26:55 by jmeirele          #+#    #+#             */
-/*   Updated: 2024/12/27 16:42:20 by jmeirele         ###   ########.fr       */
+/*   Updated: 2024/12/30 15:16:10 by jmeirele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,6 +109,7 @@ void	print_current_img(t_game *game, t_map *map, int i, int j);
 //===============================================================//
 
 int		handle_key_press(int keycode, t_game *game);
+int		close_window(t_game *game);
 
 //===============================================================//
 //                            MOVES                              //

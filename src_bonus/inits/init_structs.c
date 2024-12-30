@@ -6,7 +6,7 @@
 /*   By: jmeirele <jmeirele@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/17 12:01:33 by jmeirele          #+#    #+#             */
-/*   Updated: 2024/12/27 16:50:02 by jmeirele         ###   ########.fr       */
+/*   Updated: 2024/12/30 15:08:38 by jmeirele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,8 @@ t_game	*init_game_struct(void)
 	game->p_left = NULL;
 	game->closed_exit = NULL;
 	game->opened_exit = NULL;
+	game->zombie = NULL;
+	game->hud_moves = NULL;
 	return (game);
 }
 
