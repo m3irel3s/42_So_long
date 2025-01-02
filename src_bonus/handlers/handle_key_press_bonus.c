@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   handle_key_press.c                                 :+:      :+:    :+:   */
+/*   handle_key_press_bonus.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jmeirele <jmeirele@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/19 17:24:56 by jmeirele          #+#    #+#             */
-/*   Updated: 2025/01/02 16:36:12 by jmeirele         ###   ########.fr       */
+/*   Updated: 2025/01/02 20:42:09 by jmeirele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,13 @@
 
 int	handle_key_press(int keycode, t_game *game)
 {
-	if (keycode == XK_Up)
+	if (keycode == XK_Up || keycode == 'w')
 		move_player_up(game, game->map);
-	else if (keycode == XK_Down)
+	else if (keycode == XK_Down || keycode == 's')
 		move_player_down(game, game->map);
-	else if (keycode == XK_Left)
+	else if (keycode == XK_Left || keycode == 'a')
 		move_player_left(game, game->map);
-	else if (keycode == XK_Right)
+	else if (keycode == XK_Right || keycode == 'd')
 		move_player_right(game, game->map);
 	else if (keycode == XK_Escape)
 		exit_program(game, "Game closed, pressed ESC\n", 1);

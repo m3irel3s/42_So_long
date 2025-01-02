@@ -102,7 +102,7 @@ get_log:
 	fi
 
 VALID_MAP = ./src/maps/valid_maps/map.ber
-VALID_MAP_BONUS = ./src_bonus/maps/invalid_maps/too_small.ber
+VALID_MAP_BONUS = ./src_bonus/maps/valid_maps/map1.ber
 
 val: $(NAME) $(SRC)
 	valgrind $(VARGS) ./$(NAME) $(VALID_MAP)
