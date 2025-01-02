@@ -6,7 +6,7 @@
 /*   By: jmeirele <jmeirele@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/17 14:48:02 by jmeirele          #+#    #+#             */
-/*   Updated: 2025/01/02 19:13:29 by jmeirele         ###   ########.fr       */
+/*   Updated: 2025/01/02 19:43:46 by jmeirele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,7 @@ copy\n", 2);
 			map->grid_copy[i][j] = map->grid[i][j];
 			j++;
 		}
+		map->grid_copy[i][j] = '\0';
 		i++;
 	}
 }

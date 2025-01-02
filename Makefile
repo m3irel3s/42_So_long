@@ -101,8 +101,8 @@ get_log:
 		tail -f gdb.txt; \
 	fi
 
-VALID_MAP = ./src/maps/invalid_maps/empty.ber
-VALID_MAP_BONUS = ./src_bonus/maps/valid_maps/map1.ber
+VALID_MAP = ./src/maps/valid_maps/map.ber
+VALID_MAP_BONUS = ./src_bonus/maps/invalid_maps/too_small.ber
 
 val: $(NAME) $(SRC)
 	valgrind $(VARGS) ./$(NAME) $(VALID_MAP)

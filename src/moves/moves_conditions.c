@@ -6,7 +6,7 @@
 /*   By: jmeirele <jmeirele@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/20 16:57:05 by jmeirele          #+#    #+#             */
-/*   Updated: 2025/01/02 16:09:06 by jmeirele         ###   ########.fr       */
+/*   Updated: 2025/01/02 19:48:03 by jmeirele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,5 +46,5 @@ void	update_position(t_game *game, int x, int y, void *new_img)
 void	check_exit(t_game *game, t_map *map, int x, int y)
 {
 	if (map->grid[x][y] == 'E' && map->collects == 0)
-		exit_program(game, "Game Over! You've collected all items\n", 1);
+		exit_program(game, "You win! You've collected all items!\n", 1);
 }
