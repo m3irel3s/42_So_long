@@ -6,16 +6,16 @@
 /*   By: jmeirele <jmeirele@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/17 10:50:26 by jmeirele          #+#    #+#             */
-/*   Updated: 2024/12/27 15:03:06 by jmeirele         ###   ########.fr       */
+/*   Updated: 2025/01/02 16:09:43 by jmeirele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/so_long.h"
 
-void	exit_program(t_game *game, char *str)
+void	exit_program(t_game *game, char *str, int fd)
 {
 	if (game)
 		free_struct(game);
-	ft_putstr_fd(str, 2);
+	ft_putstr_fd(str, fd);
 	exit(1);
 }

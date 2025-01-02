@@ -1,21 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   error.c                                            :+:      :+:    :+:   */
+/*   map_name_checker.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jmeirele <jmeirele@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/17 10:50:26 by jmeirele          #+#    #+#             */
-/*   Updated: 2024/12/27 16:50:02 by jmeirele         ###   ########.fr       */
+/*   Created: 2024/12/17 11:11:17 by jmeirele          #+#    #+#             */
+/*   Updated: 2025/01/02 16:11:52 by jmeirele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/so_long_bonus.h"
 
-void	exit_program(t_game *game, char *str)
+void	map_name_checker(t_game *game, t_map *map)
 {
-	if (game)
-		free_struct(game);
-	ft_putstr_fd(str, 2);
-	exit(1);
+	char	*extension;
+
+	extension = ft_strrchr(map->map_name, '.');
+	if (extension && ft_strcmp(extension, ".ber") == 0)
+		return ;
+	exit_program(game, "Error\nMap name invalid\n", 2);
 }

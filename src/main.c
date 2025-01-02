@@ -6,7 +6,7 @@
 /*   By: jmeirele <jmeirele@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/17 10:34:23 by jmeirele          #+#    #+#             */
-/*   Updated: 2024/12/27 15:12:38 by jmeirele         ###   ########.fr       */
+/*   Updated: 2025/01/02 16:07:37 by jmeirele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,5 +26,5 @@ int	main(int argc, char **argv)
 		free_struct(game);
 	}
 	else
-		exit_program(game, "Error\n getting arguments\n");
+		exit_program(game, "Error\n Failed to get arguments\n", 2);
 }

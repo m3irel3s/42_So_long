@@ -46,23 +46,23 @@ SRC		=	$(SRC_DIR)/main.c \
 			$(MOVES_DIR)/moves_conditions.c \
 			$(VALID_PATH_CHECKER_DIR)/flood_fill.c \
 
-SRC_BONUS	=	$(SRC_BONUS_DIR)/main.c \
-			$(INITS_DIR_BONUS)/init_structs.c \
-			$(PARSING_DIR_BONUS)/map_name_checker.c \
-			$(PARSING_DIR_BONUS)/map_validation.c \
-			$(PARSING_DIR_BONUS)/map_chars_checker.c \
-			$(UTILS_DIR_BONUS)/error.c \
-			$(UTILS_DIR_BONUS)/free.c \
-			$(UTILS_DIR_BONUS)/map_utils.c \
-			$(UTILS_DIR_BONUS)/player_utils.c \
-			$(RENDER_DIR_BONUS)/render_moves.c \
-			$(RENDER_DIR_BONUS)/render_win.c \
-			$(RENDER_DIR_BONUS)/preload_imgs.c \
-			$(RENDER_DIR_BONUS)/replace_img.c \
-			$(HANDLERS_DIR_BONUS)/handle_key_press.c \
-			$(MOVES_DIR_BONUS)/moves.c \
-			$(MOVES_DIR_BONUS)/moves_conditions.c \
-			$(VALID_PATH_CHECKER_DIR_BONUS)/flood_fill.c \
+SRC_BONUS	=	$(SRC_BONUS_DIR)/main_bonus.c \
+			$(INITS_DIR_BONUS)/init_structs_bonus.c \
+			$(PARSING_DIR_BONUS)/map_name_checker_bonus.c \
+			$(PARSING_DIR_BONUS)/map_validation_bonus.c \
+			$(PARSING_DIR_BONUS)/map_chars_checker_bonus.c \
+			$(UTILS_DIR_BONUS)/error_bonus.c \
+			$(UTILS_DIR_BONUS)/free_bonus.c \
+			$(UTILS_DIR_BONUS)/map_utils_bonus.c \
+			$(UTILS_DIR_BONUS)/player_utils_bonus.c \
+			$(RENDER_DIR_BONUS)/render_moves_bonus.c \
+			$(RENDER_DIR_BONUS)/render_win_bonus.c \
+			$(RENDER_DIR_BONUS)/preload_imgs_bonus.c \
+			$(RENDER_DIR_BONUS)/replace_img_bonus.c \
+			$(HANDLERS_DIR_BONUS)/handle_key_press_bonus.c \
+			$(MOVES_DIR_BONUS)/moves_bonus.c \
+			$(MOVES_DIR_BONUS)/moves_conditions_bonus.c \
+			$(VALID_PATH_CHECKER_DIR_BONUS)/flood_fill_bonus.c \
 
 
 

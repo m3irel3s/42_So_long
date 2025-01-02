@@ -6,7 +6,7 @@
 /*   By: jmeirele <jmeirele@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/17 10:26:55 by jmeirele          #+#    #+#             */
-/*   Updated: 2024/12/30 15:16:10 by jmeirele         ###   ########.fr       */
+/*   Updated: 2025/01/02 16:08:37 by jmeirele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -135,7 +135,7 @@ void	flood_fill(char **copy, int x, int y);
 //                  CONTROL ERRORS AND FREES                     //
 //===============================================================//
 
-void	exit_program(t_game *game, char *str);
+void	exit_program(t_game *game, char *str, int fd);
 void	free_struct(t_game *game);
 void	free_grid(t_map *map, char **grid);
 void	free_images(t_game *game);

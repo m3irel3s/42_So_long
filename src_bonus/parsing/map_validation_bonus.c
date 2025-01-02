@@ -6,7 +6,7 @@
 /*   By: jmeirele <jmeirele@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/17 11:13:08 by jmeirele          #+#    #+#             */
-/*   Updated: 2024/12/30 15:38:55 by jmeirele         ###   ########.fr       */
+/*   Updated: 2025/01/02 16:48:32 by jmeirele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,12 +35,17 @@ void	populate_map_grid(t_game *game, t_map *map)
 	i = 0;
 	fd = open(map->map_name, O_RDONLY);
 	if (fd == -1)
-		exit_program(game, "Error\nError opening the file descriptor\n");
+		exit_program(game, "Error\nError opening the file descriptor\n", 2);
 	map->grid = malloc(sizeof(char *) * map->height);
+	if (!map->grid)
+		exit_program(game, "Error\nError allocating memory for map->grid\n", 2);
 	line = get_next_line(fd);
 	while (line && *line)
 	{
 		map->grid[i] = malloc(sizeof(char) * ft_strlen(line) + 1);
+		if (!map->grid[i])
+			exit_program(game, "Error\nError allocating memory for \
+map->grid[i]\n", 2);
 		ft_strlcpy(map->grid[i], line, ft_strlen(line) + 1);
 		i++;
 		free(line);
@@ -69,7 +74,7 @@ void	check_width_and_set(t_game *game, t_map *map)
 		{
 			close(fd);
 			free(line);
-			exit_program(game, "Error\nFound different width!\n");
+			exit_program(game, "Error\nFound different width!\n", 2);
 		}
 		free(line);
 		line = get_next_line(fd);
@@ -87,14 +92,16 @@ void	check_walls(t_game *game, t_map *map)
 	while (i < map->width)
 	{
 		if (map->grid[0][i] != '1' || map->grid[map->height - 1][i] != '1')
-			exit_program(game, "Error\nFound another thing, except a wall!\n");
+			exit_program(game, "Error\nFound another thing, except a \
+wall!\n", 2);
 		i++;
 	}
 	i = 0;
 	while (i < map->height)
 	{
 		if (map->grid[i][0] != '1' || map->grid[i][map->width - 1] != '1')
-			exit_program(game, "Error\nFound another thing, except a wall!\n");
+			exit_program(game, "Error\nFound another thing, except a \
+wall!\n", 2);
 		i++;
 	}
 }

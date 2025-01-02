@@ -6,7 +6,7 @@
 /*   By: jmeirele <jmeirele@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/23 11:24:43 by jmeirele          #+#    #+#             */
-/*   Updated: 2024/12/30 14:56:33 by jmeirele         ###   ########.fr       */
+/*   Updated: 2025/01/02 16:14:38 by jmeirele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	check_valid_path(t_game *game, t_map *map)
 	if (count_occurs(map, map->grid_copy, 'C') > 0
 		|| count_occurs(map, map->grid_copy, 'E') > 0)
 		exit_program(game, "Error\nInvalid path, not possible\
- to complete the game!\n");
+ to complete the game!\n", 2);
 }
 
 void	flood_fill(char **copy, int x, int y)

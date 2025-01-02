@@ -6,7 +6,7 @@
 /*   By: jmeirele <jmeirele@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/17 12:01:33 by jmeirele          #+#    #+#             */
-/*   Updated: 2024/12/30 15:08:38 by jmeirele         ###   ########.fr       */
+/*   Updated: 2025/01/02 16:11:20 by jmeirele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ t_game	*init_game_struct(void)
 
 	game = malloc(sizeof(t_game));
 	if (!game)
-		exit_program(game, "Error\nError allocating memory for game\n");
+		exit_program(game, "Error\nError allocating memory for game\n", 2);
 	game->map = init_map_struct(game);
 	game->moves = 0;
 	game->mlx = NULL;
@@ -43,7 +43,7 @@ t_map	*init_map_struct(t_game *game)
 
 	map = malloc(sizeof(t_map));
 	if (!map)
-		exit_program(game, "Error\nError allocating memory for map\n");
+		exit_program(game, "Error\nError allocating memory for map\n", 2);
 	map->grid = NULL;
 	map->grid_copy = NULL;
 	map->width = 0;
