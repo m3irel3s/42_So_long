@@ -6,7 +6,7 @@
 /*   By: jmeirele <jmeirele@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/17 10:26:55 by jmeirele          #+#    #+#             */
-/*   Updated: 2025/01/02 16:08:37 by jmeirele         ###   ########.fr       */
+/*   Updated: 2025/01/02 19:11:37 by jmeirele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,6 +76,7 @@ int		count_occurs(t_map *map, char **grid, char c);
 void	check_chars(t_game *game, t_map *map);
 void	check_invalid_chars(t_game *game, t_map *map);
 void	check_walls(t_game *game, t_map *map);
+int		*populate_grid_line_sizes(t_game *game, t_map *map);
 
 //===============================================================//
 //                        UTILS FUNCTIONS                        //
