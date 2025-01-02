@@ -6,7 +6,7 @@
 /*   By: jmeirele <jmeirele@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/17 10:26:55 by jmeirele          #+#    #+#             */
-/*   Updated: 2024/12/30 15:42:04 by jmeirele         ###   ########.fr       */
+/*   Updated: 2025/01/02 15:17:01 by jmeirele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,7 +103,7 @@ void	preload_images(t_game *game);
 void	render_win(t_game *game, t_map *map);
 void	render_map(t_game *game, t_map *map);
 void	replace_img(t_game *game, int x, int y, void *new_img);
-void	render_moves(t_game *game);
+void	render_moves(t_game *game, t_map *map);
 void	print_current_img(t_game *game, t_map *map, int i, int j);
 
 //===============================================================//

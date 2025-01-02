@@ -6,7 +6,7 @@
 /*   By: jmeirele <jmeirele@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/18 17:20:09 by jmeirele          #+#    #+#             */
-/*   Updated: 2024/12/30 15:42:54 by jmeirele         ###   ########.fr       */
+/*   Updated: 2025/01/02 15:28:58 by jmeirele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	render_win(t_game *game, t_map *map)
 	render_map(game, map);
 	mlx_hook(game->win, KeyPress, KeyPressMask, handle_key_press, game);
 	mlx_hook(game->win, DestroyNotify, 0, close_window, game);
-	render_moves(game);
+	render_moves(game, map);
 	mlx_loop(game->mlx);
 }
 

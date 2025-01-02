@@ -3,6 +3,9 @@ NAME_BONUS  = so_long_bonus
 CC          = cc
 CFLAGS      = -Wall -Wextra -Werror -g -I. -I$(INC_DIR)
 
+MLXFLAGS    = -L ./$(MLX_DIR) -lm -lmlx -Ilmlx -lXext -lX11
+VARGS = --leak-check=full --show-leak-kinds=all --track-fds=yes --track-origins=yes
+
 SRC_DIR     = src
 SRC_BONUS_DIR = src_bonus
 INC_DIR     = inc
@@ -61,9 +64,7 @@ SRC_BONUS	=	$(SRC_BONUS_DIR)/main.c \
 			$(MOVES_DIR_BONUS)/moves_conditions.c \
 			$(VALID_PATH_CHECKER_DIR_BONUS)/flood_fill.c \
 
-MLXFLAGS    = -L ./$(MLX_DIR) -lm -lmlx -Ilmlx -lXext -lX11
 
-VARGS = --leak-check=full --show-leak-kinds=all --track-fds=yes --track-origins=yes
 
 all: $(LIBFT) $(NAME)
 
@@ -101,12 +102,13 @@ get_log:
 	fi
 
 VALID_MAP = ./src/maps/valid_maps/map1.ber
+VALID_MAP_BONUS = ./src_bonus/maps/valid_maps/map1.ber
 
 val: $(NAME) $(SRC)
 	valgrind $(VARGS) ./$(NAME) $(VALID_MAP)
 
 val_bonus:  $(NAME_BONUS) $(SRC_BONUS)
-	valgrind $(VARGS) ./$(NAME_BONUS) $(VALID_MAP)
+	valgrind $(VARGS) ./$(NAME_BONUS) $(VALID_MAP_BONUS)
 
 clean:
 	rm -f $(NAME) $(NAME_BONUS)

@@ -6,13 +6,13 @@
 /*   By: jmeirele <jmeirele@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/27 13:57:09 by jmeirele          #+#    #+#             */
-/*   Updated: 2024/12/30 15:10:10 by jmeirele         ###   ########.fr       */
+/*   Updated: 2025/01/02 15:45:58 by jmeirele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/so_long_bonus.h"
 
-void	render_moves(t_game *game)
+void	render_moves(t_game *game, t_map *map)
 {
 	char	*moves;
 	char	*text;
@@ -21,14 +21,13 @@ void	render_moves(t_game *game)
 	text_width = 0;
 	moves = ft_itoa(game->moves);
 	text = ft_strjoin("Current moves: ", moves);
-	text_width = ft_strlen(text) * 10;
+	text_width = ft_strlen(text) * 7;
 	if (!game->hud_moves)
-		game->hud_moves = mlx_new_image(game->mlx, 192, 64);
-	mlx_put_image_to_window(game->mlx, game->win, game->hud_moves,
-		(game->map->width * 64 - 192) / 2, game->map->height * 64);
-	mlx_string_put(game->mlx, game->win,
-		(game->map->width * 64 - text_width) / 2,
-		game->map->height * 64 + (64 - 20) / 2, 0xFFFFFF, text);
+		game->hud_moves = mlx_new_image(game->mlx, map->width * 64, 48);
+	mlx_put_image_to_window(game->mlx, game->win, game->hud_moves, 0,
+		map->height * 64);
+	mlx_string_put(game->mlx, game->win, (map->width * 64 / 2)
+		-(text_width / 2), map->height * 64 + 26, 0xFFFFFF, text);
 	free(moves);
 	free(text);
 }

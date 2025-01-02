@@ -6,7 +6,7 @@
 /*   By: jmeirele <jmeirele@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/20 16:57:05 by jmeirele          #+#    #+#             */
-/*   Updated: 2024/12/30 15:43:32 by jmeirele         ###   ########.fr       */
+/*   Updated: 2025/01/02 15:28:49 by jmeirele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ void	update_position(t_game *game, int x, int y, void *new_img)
 	replace_img(game, x, y, new_img);
 	game->moves++;
 	ft_printf("Moves => %d\n", game->moves);
-	render_moves(game);
+	render_moves(game, map);
 }
 
 void	check_zombie(t_game *game, t_map *map, int x, int y)
