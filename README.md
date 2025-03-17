@@ -1,6 +1,7 @@
 ## 🌲 **42_So_Long**
-
-![image](https://github.com/user-attachments/assets/2b7d2120-ef04-4366-b48c-10c5333d058b)
+<div align="center">
+  ![image](https://github.com/user-attachments/assets/2b7d2120-ef04-4366-b48c-10c5333d058b)
+</div>
 
 ## 🔍 Overview
 
