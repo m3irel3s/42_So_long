@@ -1,4 +1,4 @@
-## **42_So_Long**
+## 🌲**42_So_Long**
 ## 🔍 Overview
 
 So_Long is a 2D puzzle game where the player moves through a grid, collects chests, and reaches the exit while avoiding obstacles like walls. The goal is to implement the game with proper memory management and efficient use of C programming concepts like dynamic memory allocation, user input handling, and basic game mechanics.
