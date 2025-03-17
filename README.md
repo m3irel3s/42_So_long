@@ -12,7 +12,7 @@ So_Long is a 2D puzzle game where the player moves through a grid, collects ches
 - **Exit Condition:** The game finishes when the player reaches the exit tile with all the chests collected.
 - **Memory Management:** Dynamically allocated memory is used to represent the map and game entities, and memory is freed when no longer needed.
 
-![Screenshot from 2025-03-17 14-13-58](https://github.com/user-attachments/assets/1d0b954f-c68f-4ce8-a5fd-888f1feb343a)
+![image](https://github.com/user-attachments/assets/2dd0ce9a-f1da-4899-ace6-a89034da1e5f)
 
 ## 🎮 Bonus
 
