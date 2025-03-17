@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   moves_conditions.c                                 :+:      :+:    :+:   */
+/*   moves_conditions_bonus.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jmeirele <jmeirele@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/20 16:57:05 by jmeirele          #+#    #+#             */
-/*   Updated: 2025/01/02 16:11:35 by jmeirele         ###   ########.fr       */
+/*   Updated: 2025/03/17 13:37:59 by jmeirele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,19 +40,27 @@ void	update_position(t_game *game, int x, int y, void *new_img)
 	map->grid[x][y] = 'P';
 	replace_img(game, x, y, new_img);
 	game->moves++;
-	ft_printf("Moves => %d\n", game->moves);
+	ft_printf(1, "Moves => %d\n", game->moves);
 	render_moves(game, map);
 }
 
 void	check_zombie(t_game *game, t_map *map, int x, int y)
 {
 	if (map->grid[x][y] == 'X')
+	{
+		game->moves++;
+		ft_printf(1, "Moves => %d\n", game->moves);
 		exit_program(game, "Game Over! The zombie got you... \
 Better luck next time!\n", 1);
+	}
 }
 
 void	check_exit(t_game *game, t_map *map, int x, int y)
 {
 	if (map->grid[x][y] == 'E' && map->collects == 0)
+	{
+		game->moves++;
+		ft_printf(1, "Moves => %d\n", game->moves);
 		exit_program(game, "You win! The undead have been defeated.\n", 1);
+	}
 }
