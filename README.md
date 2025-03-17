@@ -1,6 +1,6 @@
 ## 🌲 **42_So_Long**
 <div align="center">
-  <img src="![image](https://github.com/user-attachments/assets/2b7d2120-ef04-4366-b48c-10c5333d058b)">
+  <img src="https://github.com/user-attachments/assets/2b7d2120-ef04-4366-b48c-10c5333d058b" alt="image">
 </div>
 
 ## 🔍 Overview
