@@ -6,7 +6,7 @@
 ## 🔍 Overview
 
 
-<video controls width="600">
+<video>
   <source src="https://github.com/user-attachments/assets/dc6e02dc-4ded-4e8b-a998-73747af9568b" type="video/mp4">
 </video>
 
