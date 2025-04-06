@@ -18,7 +18,16 @@ So_Long is a 2D puzzle game where the player moves through a grid, collects ches
 
 ## 🎮 Bonus
 
-For the bonus, I added a stationary enemy that acts like a wall. If the player touches the enemy, they lose the game. This adds difficulty by forcing the player to avoid the enemy while still collecting chests and reaching the exit.
+For the bonus, I added a stationary enemy that instantly ends the game if the player touches it. This adds an extra layer of difficulty, requiring the player to carefully avoid the enemy while collecting all the chests and reaching the exit.
+
+<div align="center">
+  <video 
+    src="https://github.com/user-attachments/assets/70103f6f-6037-4e51-9f8c-460b3cf05047" 
+    controls 
+    width="600"
+    style="border: none; outline: none; box-shadow: none;">
+  </video>
+</div>
 
 ## 💡 Inspiration
 
