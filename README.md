@@ -1,11 +1,3 @@
-
-
-## 🌲 **42_So_Long**
-<div align="center">
-  <img src ="https://github.com/user-attachments/assets/2d4e91ae-6be2-4ed1-a425-cbdb6548d1c4" alt="image">
-</div>
-
-## 🔍 Overview
 <style>
   video.border {
     border: none !important;
@@ -13,6 +5,14 @@
     box-shadow: none !important;
   }
 </style>
+
+## 🌲 **42_So_Long**
+<div align="center">
+  <img src ="https://github.com/user-attachments/assets/2d4e91ae-6be2-4ed1-a425-cbdb6548d1c4" alt="image">
+</div>
+
+## 🔍 Overview
+
 
 <div align="center">
   <video 
