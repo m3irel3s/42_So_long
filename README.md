@@ -16,9 +16,9 @@ So_Long is a 2D puzzle game where the player moves through a grid, collects ches
 - **Exit Condition:** The game finishes when the player reaches the exit tile with all the chests collected.
 - **Memory Management:** Dynamically allocated memory is used to represent the map and game entities, and memory is freed when no longer needed.
 
+## 🎮 Bonus
 
-
-
+For the bonus, I added a stationary enemy that instantly ends the game if the player touches it. This adds an extra layer of difficulty, requiring the player to carefully avoid the enemy while collecting all the chests and reaching the exit.
 
 <div align="center">
   <video 
@@ -28,10 +28,6 @@ So_Long is a 2D puzzle game where the player moves through a grid, collects ches
     style="border: none; outline: none; box-shadow: none;">
   </video>
 </div>
-
-## 🎮 Bonus
-
-For the bonus, I added a stationary enemy that acts like a wall. If the player touches the enemy, they lose the game. This adds difficulty by forcing the player to avoid the enemy while still collecting chests and reaching the exit.
 
 ## 💡 Inspiration
 
