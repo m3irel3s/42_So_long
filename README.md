@@ -5,20 +5,6 @@
 
 ## 🔍 Overview
 
-
-<div align="center">
-  <video 
-    src="https://github.com/user-attachments/assets/dc6e02dc-4ded-4e8b-a998-73747af9568b" 
-    controls 
-    style="border: none!important"
-    >
-  </video>
-</div>
-
-
-
-
-
 So_Long is a 2D puzzle game where the player moves through a grid, collects chests, and reaches the exit while avoiding obstacles like walls. The goal is to implement the game with proper memory management and efficient use of C programming concepts like dynamic memory allocation, user input handling, and basic game mechanics.
 
 ## 🛠 Features
@@ -29,6 +15,15 @@ So_Long is a 2D puzzle game where the player moves through a grid, collects ches
 - **Obstacle Handling:** The game includes walls obstacles the player must avoid to succeed.
 - **Exit Condition:** The game finishes when the player reaches the exit tile with all the chests collected.
 - **Memory Management:** Dynamically allocated memory is used to represent the map and game entities, and memory is freed when no longer needed.
+
+<div align="center">
+  <video 
+    src="https://github.com/user-attachments/assets/dc6e02dc-4ded-4e8b-a998-73747af9568b" 
+    controls 
+    width="600"
+    style="border: none; outline: none; box-shadow: none;">
+  </video>
+</div>
 
 ## 🎮 Bonus
 
